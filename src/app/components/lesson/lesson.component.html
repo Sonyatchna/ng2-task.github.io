@@ -1,0 +1,25 @@
+<div class="openModelButtonBlock">
+  <button (click)="openAddLessonModal()">Add new lesson</button>
+</div>
+
+<app-modal *ngIf="modalVisible" [modalVisible]="modalVisible" (modalEmitter)="closeModal()"></app-modal>
+
+<table class="lessonsTable" *ngIf="lessons.length; else noLessonText">
+  <thead>
+    <tr class="lessonsHeader">
+      <th>#</th>
+      <th>Topic</th>
+      <th>Date</th>
+      <th>Lecturer</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <app-lesson-item [lesson]="lesson" *ngFor="let lesson of lessons"></app-lesson-item>
+  </tbody>
+</table>
+
+<ng-template #noLessonText>
+  <h2 class="noItemsTextBlock">You haven't added anything yet</h2>
+</ng-template>

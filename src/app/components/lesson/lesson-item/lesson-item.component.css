@@ -1,0 +1,12 @@
+.lessonItem {
+  display: flex;
+  height: 40px;
+  width: 100%;
+}
+
+.lessonItem td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}

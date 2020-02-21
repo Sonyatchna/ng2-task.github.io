@@ -1,0 +1,23 @@
+<tr *ngIf="!lesson.editMode; else editBlock" class="lessonItem">
+  <td>{{lesson.id}}</td>
+  <td>{{lesson.topic}}</td>
+  <td>{{lesson.date}}</td>
+  <td>{{lesson.lecturer}}</td>
+  <td>
+    <button (click)="editModeOn()">Edit</button>
+    <button (click)="deleteLesson(lesson.id)">Delete</button>
+  </td>
+</tr>
+
+<ng-template #editBlock>
+  <div class="lessonItem">
+    <td>{{lesson.id}}</td>
+    <td><input [value]="lesson.topic" #newTopic></td>
+    <td><input [value]="lesson.date" #newDate></td>
+    <td><input [value]="lesson.lecturer" #newLecturer></td>
+    <td>
+      <button (click)="editLesson()">Save</button>
+      <button (click)="cancelEditing()">Cancel</button>
+    </td>
+  </div>
+</ng-template>

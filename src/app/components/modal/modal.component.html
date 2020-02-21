@@ -1,0 +1,18 @@
+<div class="modalContainer" *ngIf="modalVisible">
+  <div class="modal">
+
+    <h2>Add new lesson</h2>
+
+    <div class="modalContent">
+      <div><label>Topic</label><input #newTopic></div>
+      <div><label>Date</label><input #newDate></div>
+      <div><label>Lecturer</label><input #newLecturer></div>
+    </div>
+
+    <div class="modalButtons">
+      <button (click)="addToTheList(newTopic, newDate, newLecturer)">Add to the list</button>
+      <button (click)="closeModal()">Close modal</button>
+    </div>
+
+  </div>
+</div>
